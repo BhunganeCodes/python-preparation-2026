@@ -6,7 +6,8 @@ def sum_numbers(n: int) -> int:
         Input → n = 5  
         Output → 15  (because 1 + 2 + 3 + 4 + 5 = 15)
     """
-    pass
+    result = sum(i for i in range(1, n+1))
+    return result
 
 
 def reverse_list(lst: list) -> list:
@@ -19,7 +20,7 @@ def reverse_list(lst: list) -> list:
         Input → [1, 2, 3, 4, 5]
         Output → [5, 4, 3, 2, 1]
     """
-    pass    
+    return lst[::-1]
 
 def remove_duplicates(lst1: list) -> list:
     """
@@ -29,7 +30,11 @@ def remove_duplicates(lst1: list) -> list:
         Input → [1, 2, 2, 3, 4, 4, 5]
         Output → [1, 2, 3, 4, 5]
     """
-    pass
+    result = []
+    for n in lst1:
+        if n not in result:
+            result.append(n)
+    return result
 
 def fibonacci_series(n_terms: int = 10) -> list:
     """
@@ -93,4 +98,6 @@ if __name__ == "__main__":
     # You can use this section for testing your functions
     # Example:
     # print(sum_numbers(10))
-    pass
+    print(sum_numbers(5))
+    print(reverse_list([1, 2, 3, 4, 5]))
+    print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
