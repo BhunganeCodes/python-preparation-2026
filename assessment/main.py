@@ -77,7 +77,7 @@ def is_palindrome(s) -> bool:
 
 
     """
-    pass
+    return s.strip().lower() == s[::-1].strip().lower()
 
 
 
@@ -116,3 +116,4 @@ if __name__ == "__main__":
     print(reverse_list([1, 2, 3, 4, 5]))
     print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
     print(fibonacci_series(10))
+    print(is_palindrome("Racecar"))
