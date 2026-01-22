@@ -36,7 +36,7 @@ def remove_duplicates(lst1: list) -> list:
             result.append(n)
     return result
 
-def fibonacci_series(n_terms: int = 10) -> list:
+def fibonacci_series(n_terms: int) -> list:
     """
     Generate a Fibonacci series up to n terms.
 
@@ -46,7 +46,21 @@ def fibonacci_series(n_terms: int = 10) -> list:
         Input → n_terms = 10
         Output → [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
     """
-    pass
+    result = []
+    a, b = 0, 1
+
+    if n_terms <= 0:
+        return result
+    
+    if n_terms == 1:
+        result.append(a)
+        return result
+    
+    else:
+        for _ in range(n_terms):
+            result.append(a)
+            a, b = b, a + b
+    return result
 
 def is_palindrome(s) -> bool:
     """
@@ -63,7 +77,7 @@ def is_palindrome(s) -> bool:
 
 
     """
-    
+    pass
 
 
 
@@ -101,3 +115,4 @@ if __name__ == "__main__":
     print(sum_numbers(5))
     print(reverse_list([1, 2, 3, 4, 5]))
     print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
+    print(fibonacci_series(10))
