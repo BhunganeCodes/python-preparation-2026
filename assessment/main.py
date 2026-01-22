@@ -74,11 +74,10 @@ def is_palindrome(s) -> bool:
 
         Input → "Racecar", 121
         Output → True
-
-
     """
-    return s.strip().lower() == s[::-1].strip().lower()
-
+    s = str(s)
+    s = s.replace(" ", "").lower()
+    return s == s[::-1]
 
 
 def char_frequency(s: str) -> dict:
@@ -90,7 +89,15 @@ def char_frequency(s: str) -> dict:
         Input → "hello world"
         Output → {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
     """
-    pass
+    s = s.lower()
+    freq = {}
+
+    for char in s:
+        if char in freq:
+            freq[char] += 1
+        else:
+            freq[char] = 1
+    return freq
 
 
 def factorial(n: int) -> int:
@@ -105,7 +112,13 @@ def factorial(n: int) -> int:
         Input → n = 5
         Output → 120
     """
-    pass
+    if n < 0:
+        raise ValueError
+    result = 1
+
+    for i in range(1, n+1):
+        result*= i
+    return result
 
 
 if __name__ == "__main__":
@@ -117,3 +130,5 @@ if __name__ == "__main__":
     print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
     print(fibonacci_series(10))
     print(is_palindrome("Racecar"))
+    print(char_frequency("hello world"))
+    print(factorial(5))
