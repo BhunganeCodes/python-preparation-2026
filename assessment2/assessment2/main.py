@@ -112,7 +112,13 @@ def is_prime(n: int) -> bool:
         Input → n = 10
         Output → False
     """
-    pass
+    if n <= 1:
+        return False
+    
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 
@@ -138,3 +144,4 @@ if __name__ == "__main__":
     print(merge_dictionaries({"a": 1, "b": 2}, {"b": 3, "c": 4}))
     print(count_vowels("Hello World"))
     print(remove_vowels("programming"))
+    print(is_prime(10))
