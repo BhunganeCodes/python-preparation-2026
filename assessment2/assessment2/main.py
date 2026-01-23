@@ -15,7 +15,9 @@ def is_anagram(str1: str, str2: str) -> bool:
         Input → str1 = "hello", str2 = "world"
         Output → False
     """
-    pass
+    string1 = [char.lower() for char in str1 if char.isalpha()]
+    string2 = [char.lower() for char in str2 if char.isalpha()]
+    return sorted(string1) == sorted(string2)
 
 
 def find_anagram_groups(words: List[str]) -> List[List[str]]:
@@ -111,4 +113,4 @@ if __name__ == "__main__":
     # You can use this section for testing your functions
     # Example:
     # print(sum_numbers(10))
-    pass
+    print(is_anagram("silent", "listen"))
