@@ -77,8 +77,12 @@ def count_vowels(s: str) -> int:
         Input → s = "Hello World"
         Output → 3
     """
-    pass
-
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
 
 def remove_vowels(s: str) -> str:
     """
@@ -127,3 +131,4 @@ if __name__ == "__main__":
     # print(sum_numbers(10))
     print(is_anagram("silent", "listen"))
     print(merge_dictionaries({"a": 1, "b": 2}, {"b": 3, "c": 4}))
+    print(count_vowels("Hello World"))
