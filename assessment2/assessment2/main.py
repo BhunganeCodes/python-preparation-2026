@@ -92,7 +92,12 @@ def remove_vowels(s: str) -> str:
         Input → s = "programming"
         Output → "prgrmmng"
     """
-    pass
+    result = ""
+    vowels = "aeiouAEIOU"
+    for char in s:
+        if char not in vowels:
+            result += char
+    return result
 
 
 
@@ -132,3 +137,4 @@ if __name__ == "__main__":
     print(is_anagram("silent", "listen"))
     print(merge_dictionaries({"a": 1, "b": 2}, {"b": 3, "c": 4}))
     print(count_vowels("Hello World"))
+    print(remove_vowels("programming"))
